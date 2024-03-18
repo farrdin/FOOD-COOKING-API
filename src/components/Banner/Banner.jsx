@@ -4,7 +4,8 @@ const Banner = () => {
       <div
         className="hero rounded-3xl min-h-screen"
         style={{
-          backgroundImage: "url(../src/assets/images/banner.jpg)",
+          backgroundImage:
+            "url(https://i.ibb.co/k6zB5mL/Rectangle-1.jpg?fbclid=IwAR2xQbuKQwwDbYM1g3yewjy1NpJiA2R8kxoe4wFaW2HIrUMUyDNvfDxLNCo)",
         }}
       >
         <div className="hero-content text-center text-neutral-content">

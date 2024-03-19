@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 function App() {
   const [cards, setCards] = useState([]);
   const [carts, setCarts] = useState([]);
-
+  const [clickCount, setClickCount] = useState(0);
+  const [addremove, setAddRemove] = useState(clickCount);
   useEffect(() => {
     fetch("/Api.json")
       .then((res) => res.json())
@@ -19,6 +20,7 @@ function App() {
   }, []);
 
   const wantToCook = (p) => {
+    setClickCount(clickCount + 1);
     const isExist = carts.find((card) => card.id == p.id);
     if (!isExist) {
       setCarts([...carts, p]);
@@ -28,6 +30,8 @@ function App() {
   };
 
   const Preparing = (id) => {
+    setAddRemove(addremove + 1);
+    setClickCount(clickCount - 1);
     const newCart = carts.filter((item) => item.id != id);
     setCarts(newCart);
   };
@@ -47,7 +51,7 @@ function App() {
         <div className="col-span-4">
           <div className=" min-h-screen border rounded-3xl">
             <h1 className="text-[#282828] text-2xl text-center font-semibold pt-8 pb-5">
-              Want to Cook
+              Want to Cook ({clickCount})
             </h1>
             <hr className="w-[80%] mx-auto mb-5" />
             <table className="table table-zebra font-[Fira Sans]">
@@ -79,7 +83,7 @@ function App() {
               </tbody>
             </table>
             <h1 className="text-[#282828] text-2xl text-center font-semibold pt-8 pb-5">
-              Currently Cooking
+              Currently Cooking ({addremove})
             </h1>
             <hr className="w-[80%] mx-auto mb-5" />
             <table className="table table-zebra font-[Fira Sans]">

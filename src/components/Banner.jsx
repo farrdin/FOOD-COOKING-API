@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="hidden">
+    <div>
       <div
         className="hero rounded-3xl min-h-screen"
         style={{

@@ -10,7 +10,7 @@
       "Salad",
       "Cherry tomatoes"
     ],
-    "total_ingredients": 3,
+    "total_ingredients": 5,
     "cook_time": "20",
     "calories": 350,
     "image": "https://i.ibb.co/7g4P56v/img1.webp"
@@ -50,7 +50,7 @@
   {
     "id": 4,
     "name": "Chocolate Chip Cookies",
-    "description": "Homemade cookies with chocolate chips, perfect for dessert or snack time.",
+    "description": "Homemade cookies with chocolate chips, perfect for dessert or snack and many time.",
     "ingredients": [
       "All-purpose flour",
       "Butter",
@@ -74,7 +74,7 @@
       "Garlic",
       "Butter"
     ],
-    "total_ingredients": 3,
+    "total_ingredients": 5,
     "cook_time": "25",
     "calories": 550,
     "image": "https://i.ibb.co/KyXQ2Nk/img5.webp"

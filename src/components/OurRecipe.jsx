@@ -1,6 +1,6 @@
 const OurRecipe = () => {
   return (
-    <div className="hidden">
+    <div>
       {" "}
       <div className="mt-36 mb-20 w-[62%] mx-auto ">
         <h1 className="text-center text-4xl font-semibold text-[#150B2B] mb-10">

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
-const Card = ({ data }) => {
+const Card = ({ data, wantToCook }) => {
+  console.log(wantToCook);
   const {
     id,
     name,
@@ -14,7 +15,7 @@ const Card = ({ data }) => {
   return (
     <div className="min-h-screen rounded-3xl">
       <div className="border min-h-content  rounded-2xl p-6 " id={id}>
-        <img className="rounded-xl" src={image} alt="" />
+        <img className="rounded-xl h-52" src={image} alt="" />
         <h3 className="mt-6 mb-4 text-[#282828] text-xl font-semibold ">
           {name}
         </h3>
@@ -44,7 +45,10 @@ const Card = ({ data }) => {
             calories
           </span>
         </div>
-        <button className="btn my-6 bg-[#0BE58A] rounded-full text-[#150B2B] text-lg font-medium ">
+        <button
+          onClick={() => wantToCook(data)}
+          className="btn my-6 bg-[#0BE58A] rounded-full text-[#150B2B] text-lg font-medium "
+        >
           Want to Cook
         </button>
       </div>
@@ -54,6 +58,9 @@ const Card = ({ data }) => {
 
 Card.propTypes = {
   data: PropTypes.object.isRequired,
+};
+Card.propTypes = {
+  wantToCook: PropTypes.func,
 };
 
 export default Card;

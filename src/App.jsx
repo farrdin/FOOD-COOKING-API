@@ -26,6 +26,11 @@ function App() {
     }
   };
 
+  const Preparing = (id) => {
+    const newCart = carts.filter((item) => item.id != id);
+    setCarts(newCart);
+  };
+
   return (
     <body className="w-11/12 mx-auto font-[lexend]">
       <Navbar></Navbar>
@@ -54,14 +59,17 @@ function App() {
                 </tr>
               </thead>
               <tbody className="bg-[#28282808] text-[#282828B2] text-base font-normal leading-7">
-                {carts.map((cart) => (
+                {carts.map((cart, index) => (
                   <tr>
-                    <th>1</th>
+                    <th>{index + 1}</th>
                     <td>{cart.name}</td>
                     <td>{cart.cook_time}</td>
                     <td>{cart.calories}</td>
                     <td>
-                      <button className="btn bg-[#0BE58A] text-[#150B2B] rounded-full text-base font-medium">
+                      <button
+                        onClick={() => Preparing(cart.id)}
+                        className="btn bg-[#0BE58A] text-[#150B2B] rounded-full text-base font-medium"
+                      >
                         Preparing
                       </button>
                     </td>

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 const Card = ({ data, wantToCook }) => {
-  console.log(wantToCook);
   const {
     id,
     name,

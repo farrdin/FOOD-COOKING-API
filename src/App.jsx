@@ -4,6 +4,7 @@ import Banner from "./components/Banner";
 import OurRecipe from "./components/OurRecipe";
 import Card from "./components/Card";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -22,7 +23,7 @@ function App() {
     if (!isExist) {
       setCarts([...carts, p]);
     } else {
-      alert("Already in cart");
+      toast("Already Added");
     }
   };
 
@@ -60,7 +61,7 @@ function App() {
               </thead>
               <tbody className="bg-[#28282808] text-[#282828B2] text-base font-normal leading-7">
                 {carts.map((cart, index) => (
-                  <tr>
+                  <tr key={index}>
                     <th>{index + 1}</th>
                     <td>{cart.name}</td>
                     <td>{cart.cook_time}</td>

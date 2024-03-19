@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Card = ({ data, wantToCook }) => {
   const {
@@ -50,6 +52,7 @@ const Card = ({ data, wantToCook }) => {
         >
           Want to Cook
         </button>
+        <ToastContainer />
       </div>
     </div>
   );

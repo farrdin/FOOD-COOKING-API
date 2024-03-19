@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Grilled Chicken Salad",
+    "description": "A refreshing salad with grilled chicken, mixed greens, and a tangy vinaigrette dressing.",
+    "ingredients": [
+      "Mixed greens",
+      "Grilled chicken breast",
+      "Mutton breast",
+      "Salad",
+      "Cherry tomatoes"
+    ],
+    "total_ingredients": 3,
+    "cook_time": "20",
+    "calories": 350,
+    "image": "https://i.ibb.co/7g4P56v/img1.webp"
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "description": "A classic Italian pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves.",
+    "ingredients": [
+      "Pizza dough",
+      "Tomato sauce",
+      "Fresh mozzarella cheese",
+      "Fresh basil leaves",
+      "Olive oil"
+    ],
+    "total_ingredients": 5,
+    "cook_time": "15",
+    "calories": 400,
+    "image": "https://i.ibb.co/wRt7TwP/img2.webp"
+  },
+  {
+    "id": 3,
+    "name": "Vegetable Stir-Fry",
+    "description": "A quick and healthy stir-fry loaded with colorful vegetables and served with rice.",
+    "ingredients": [
+      "Broccoli",
+      "Bell peppers",
+      "Carrots",
+      "Snap peas",
+      "Onion"
+    ],
+    "total_ingredients": 5,
+    "cook_time": "15",
+    "calories": 250,
+    "image": "https://i.ibb.co/JjM4QXj/img6.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Chocolate Chip Cookies",
+    "description": "Homemade cookies with chocolate chips, perfect for dessert or snack time.",
+    "ingredients": [
+      "All-purpose flour",
+      "Butter",
+      "Sugar",
+      "Eggs",
+      "Chocolate chips"
+    ],
+    "total_ingredients": 5,
+    "cook_time": "12",
+    "calories": 150,
+    "image": "https://i.ibb.co/zfPsqxJ/img4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chicken Alfredo Pasta",
+    "description": "Creamy pasta dish with grilled chicken and a rich Alfredo sauce.",
+    "ingredients": [
+      "Fettuccine pasta",
+      "Grilled chicken breast",
+      "Parmesan cheese",
+      "Garlic",
+      "Butter"
+    ],
+    "total_ingredients": 3,
+    "cook_time": "25",
+    "calories": 550,
+    "image": "https://i.ibb.co/KyXQ2Nk/img5.webp"
+  },
+  {
+    "id": 6,
+    "name": "Vegetable Curry",
+    "description": "A flavorful curry made with assorted vegetables and aromatic spices.",
+    "ingredients": [
+      "Carrots",
+      "Bell peppers",
+      "Green peas",
+      "Onion",
+      "Curry powder"
+    ],
+    "total_ingredients": 5,
+    "cook_time": "30",
+    "calories": 300,
+    "image": "https://i.ibb.co/M5MzbKZ/img3.jpg"
+  }
+]

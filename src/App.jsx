@@ -67,7 +67,7 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <OurRecipe></OurRecipe>
-      <div className="grid grid-cols-10 gap-5 my-20">
+      <div className="grid lg:grid-cols-10 gap-5 my-20">
         <div className="col-span-6 grid lg:grid-cols-2 gap-5">
           {cards.map((card) => (
             <Card key={card.id} data={card} wantToCook={wantToCook}></Card>

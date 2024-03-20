@@ -11,6 +11,9 @@ function App() {
   const [carts, setCarts] = useState([]);
   const [clickCount, setClickCount] = useState(0);
   const [addremove, setAddRemove] = useState(clickCount);
+  const [preparedItems, setPreparedItems] = useState([]);
+  const [totalCookTime, setTotalCookTime] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
   useEffect(() => {
     fetch("/Api.json")
       .then((res) => res.json())
@@ -20,9 +23,13 @@ function App() {
   }, []);
 
   const wantToCook = (p) => {
-    setClickCount(clickCount + 1);
-    const isExist = carts.find((card) => card.id == p.id);
+    if (clickCount >= 6) {
+      toast("You can't add more than 6 items to Want to Cook");
+      return;
+    }
+    const isExist = carts.find((card) => card.id === p.id);
     if (!isExist) {
+      setClickCount((prevCount) => prevCount + 1);
       setCarts([...carts, p]);
     } else {
       toast("Already Added");
@@ -30,10 +37,29 @@ function App() {
   };
 
   const Preparing = (id) => {
-    setAddRemove(addremove + 1);
-    setClickCount(clickCount - 1);
-    const newCart = carts.filter((item) => item.id != id);
+    if (addremove >= 6) {
+      toast("You can't prepare more than 6 items");
+      return;
+    }
+    const itemToPrepare = carts.find((item) => item.id === id);
+    const newCart = carts.filter((item) => item.id !== id);
     setCarts(newCart);
+    setPreparedItems([...preparedItems, itemToPrepare]);
+    setAddRemove((prevCount) => prevCount + 1);
+    setClickCount((prevCount) => Math.max(0, prevCount - 1));
+
+    const newtotalCookTime =
+      preparedItems.reduce(
+        (total, item) => total + parseInt(item.cook_time),
+        0
+      ) + parseInt(itemToPrepare.cook_time);
+
+    const newTotalCalories =
+      preparedItems.reduce((total, item) => total + item.calories, 0) +
+      itemToPrepare.calories;
+
+    setTotalCookTime(newtotalCookTime);
+    setTotalCalories(newTotalCalories);
   };
 
   return (
@@ -96,12 +122,14 @@ function App() {
                 </tr>
               </thead>
               <tbody className="bg-[#28282808] text-[#282828B2] text-base font-normal leading-7">
-                <tr>
-                  <th>1</th>
-                  <td>Spaghetti Bolognese</td>
-                  <td>30 minutes</td>
-                  <td>600 calories</td>
-                </tr>
+                {preparedItems.map((item, index) => (
+                  <tr key={index}>
+                    <th>{index + 1}</th>
+                    <td>{item.name}</td>
+                    <td>{item.cook_time}</td>
+                    <td>{item.calories}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <table className="table table-zebra  text-end my-5">
@@ -113,8 +141,8 @@ function App() {
               </thead>
               <tbody>
                 <tr className="text-[#282828CC] text-base font-medium leading-7">
-                  <td>45mins</td>
-                  <td>1050 Calories</td>
+                  <td>{totalCookTime} mins</td>
+                  <td>{totalCalories} Calories</td>
                 </tr>
               </tbody>
             </table>

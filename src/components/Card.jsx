@@ -14,8 +14,8 @@ const Card = ({ data, wantToCook }) => {
     image,
   } = data;
   return (
-    <div className="min-h-screen rounded-3xl">
-      <div className="border min-h-content  rounded-2xl p-6 " id={id}>
+    <div className="min-h-screen rounded-3xl ">
+      <div className="border min-h-content  rounded-2xl p-6 mb-5" id={id}>
         <img className="rounded-xl h-52" src={image} alt="" />
         <h3 className="mt-6 mb-4 text-[#282828] text-xl font-semibold ">
           {name}

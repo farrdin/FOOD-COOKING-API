@@ -67,14 +67,14 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <OurRecipe></OurRecipe>
-      <div className="grid lg:grid-cols-10 gap-5 my-20">
-        <div className="col-span-6 grid lg:grid-cols-2 gap-5">
+      <div className="lg:grid grid-cols-10 gap-5 my-20">
+        <div className="col-span-6 lg:grid grid-cols-2 gap-5 mb-5">
           {cards.map((card) => (
             <Card key={card.id} data={card} wantToCook={wantToCook}></Card>
           ))}
         </div>
 
-        <div className="lg:col-span-4">
+        <div className="col-span-4">
           <div className=" min-h-screen border rounded-3xl">
             <h1 className="text-[#282828] text-2xl text-center font-semibold pt-8 pb-5">
               Want to Cook ({clickCount})

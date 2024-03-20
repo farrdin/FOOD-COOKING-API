@@ -74,7 +74,7 @@ function App() {
           ))}
         </div>
 
-        <div className="col-span-4">
+        <div className="lg:col-span-4">
           <div className=" min-h-screen border rounded-3xl">
             <h1 className="text-[#282828] text-2xl text-center font-semibold pt-8 pb-5">
               Want to Cook ({clickCount})
